@@ -2,8 +2,8 @@ package pio.daw;
 
 public class User implements Localizable {
     private String id;
-    private Integer entrances = 0;
-    private Integer exits = 0;
+    private EventType lasEvent = null;
+    private Boolean inside = false;
 
     public User(String id){
         this.id = id;

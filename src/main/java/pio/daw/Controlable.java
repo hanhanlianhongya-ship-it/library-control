@@ -22,7 +22,7 @@ public interface Controlable {
      * Get the user with the biggest amount of entries.
      * @return user that enters more tiemes.
      */
-    public  User getMaxEntryUser();
+    public  List<User> getMaxEntryUsers();
 
 
     /**
