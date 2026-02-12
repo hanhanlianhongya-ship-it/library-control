@@ -18,6 +18,14 @@ public class Library implements Controlable {
     public static Library fromFile(Path path){
         Library library = new Library();
         //TODO
+        String line = null;
+        String[] splittedLine = line.split(";");
+        String id = splittedLine[0];
+        EventType e = null;
+        if(splittedLine[1].equals("ENTRADA")){
+            e = EventType.ENTRY;
+        }
+        library.registerChange(id, e);
         return library;
     }
 
@@ -26,4 +34,13 @@ public class Library implements Controlable {
     }
 
     //TODO
+    public void registerChange(String id, EventType e){
+        User u = this.users.get(id);
+        if(u == null){
+            u = new User(id);
+        }
+        u.registerNewEvent(e);
+        this.users.put(id, u);
+        
+    }
 }
