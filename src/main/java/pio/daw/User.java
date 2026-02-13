@@ -27,5 +27,13 @@ public class User implements Localizable {
         return this.nEntries;
     }
 
-    //TODO
+     /**
+     * Implementación de Localizable.
+     * Indica si el usuario está actualmente dentro de la biblioteca.
+     * @return true si está dentro, false si está fuera
+     */
+    @Override
+    public Boolean isInside() {
+        return this.inside;
+    }
 }
